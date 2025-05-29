@@ -265,4 +265,12 @@ public class AttendeeServiceTest {
 
 ## Summary
 
+In this iteration, we focused on the testability of our Domain-Driven Design components. We created unit tests for the `Attendee` aggregate to ensure its business logic is correct and behaves as expected in isolation. We also implemented integration tests for the `AttendeeService` to verify its interaction with other components like repositories and event publishers, utilizing Quarkus's testing capabilities and mocking to isolate the service. This demonstrates how DDD facilitates creating robust and maintainable tests by clearly separating concerns.
+
 ### Key points
+
+- **Testability in DDD**: Well-defined aggregates and services in DDD are inherently more testable.
+- **Unit Testing Aggregates**: Aggregates, encapsulating business logic, can be unit tested in isolation, ensuring core domain rules are correctly implemented.
+- **Integration Testing Services**: Services orchestrating domain logic can be integration tested, often with mocked dependencies (like repositories and publishers), to verify their collaborative behavior.
+- **Quarkus for Testing**: Leveraged Quarkus's testing features (`@QuarkusTest`, `@InjectMock`) to simplify the setup and execution of both unit and integration tests.
+- **Mocking Dependencies**: Used Mockito to mock dependencies in integration tests, allowing focus on the service's logic without relying on external systems.

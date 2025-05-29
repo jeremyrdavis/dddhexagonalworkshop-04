@@ -1,20 +1,18 @@
-package  dddhexagonalworkshop.conference.attendees.domain.services;
+package test.dddhexagonalworkshop.conference.attendees.domain.services;
 
-import dddhexagonalworkshop.conference.attendees.domain.events.AttendeeRegisteredEvent;
-import dddhexagonalworkshop.conference.attendees.domain.services.AttendeeService;
+import dddhexagonalworkshop.conference.attendees.domain.valueobjects.Address;
 import dddhexagonalworkshop.conference.attendees.domain.valueobjects.MealPreference;
 import dddhexagonalworkshop.conference.attendees.domain.valueobjects.TShirtSize;
-import dddhexagonalworkshop.conference.attendees.infrastructure.AttendeeEventPublisher;
-import dddhexagonalworkshop.conference.attendees.persistence.AttendeeEntity;
-import dddhexagonalworkshop.conference.attendees.persistence.AttendeeRepository;
-import io.quarkus.test.InjectMock;
+import dddhexagonalworkshop.conference.attendees.domain.commands.RegisterAttendeeCommand;
+import dddhexagonalworkshop.conference.attendees.domain.events.AttendeeRegisteredEvent;
+import dddhexagonalworkshop.conference.attendees.domain.repositories.AttendeeRepository;
+import dddhexagonalworkshop.conference.attendees.domain.services.AttendeeService;
+import dddhexagonalworkshop.conference.attendees.domain.publishers.AttendeeEventPublisher;
 import io.quarkus.test.junit.QuarkusTest;
-import jakarta.inject.Inject;
+import io.quarkus.test.junit.mockito.InjectMock;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-
-import static org.mockito.ArgumentMatchers.any;
 
 @QuarkusTest
 public class AttendeeServiceTest {
